@@ -1,0 +1,19 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.pdaodao</groupId>
+        <artifactId>backEnd</artifactId>
+        <version>1.0</version>
+    </parent>
+    <artifactId>rabbitmaq</artifactId>
+    <packaging>pom</packaging>
+    <name>Archetype - rabbitmaq</name>
+    <url>http://maven.apache.org</url>
+    <modules>
+        <module>rabbitmq-main</module>
+        <module>rabbitmq-boot</module>
+        <module>rabbitmq-boot-1</module>
+        <module>rabbitmq-boot-2</module>
+    </modules>
+</project>
