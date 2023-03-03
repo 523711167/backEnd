@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+    <!--彩色日志输出格式-->
+    <property name="CONSOLE_LOG_PATTERN" value="%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(%level){blue} %clr(${PID}){magenta} %clr([%thread]){orange} %clr(%logger){cyan} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}"/>
+    <!--非彩色日志输出格式-->
+    <property name="PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n" />
+
+    <property name="log_home" value="%logger{36}"/>
+
+    <!-- 控制台输出 -->
+    <!--    TRACE < DEBUG < INFO < WARN < ERROR < FATAL-->
+    <appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>WARN</level>
+            <!--  warn级别采用accept策略   -->
+            <onMatch>ACCEPT</onMatch>
+            <!--  非warn级别采用NEUTRAL策略         -->
+            <onMismatch>NEUTRAL</onMismatch>
+        </filter>
+
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>INFO</level>
+            <!--  info级别采用accept策略   -->
+            <onMatch>ACCEPT</onMatch>
+            <!--  非info级别采用deny策略         -->
+            <onMismatch>DENY</onMismatch>
+        </filter>
+
+        <!--此日志appender是为开发使用，只配置最底级别，控制台输出的日志级别是大于或等于此级别的日志信息-->
+        <encoder>
+            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+        </encoder>
+
+    </appender>
+
+    <!-- 按照每天生成输出日志文件 -->
+    <appender name="fileAppender" class="ch.qos.logback.core.FileAppender">
+        <file>log/%d{yyyy-MM-dd}.log</file>
+        <append>false</append>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>INFO</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+        <encoder>
+            <!--格式化输出：%d表示日期，%thread表示线程，%-5level：级别从左显示五个字符宽度，%logger{36}：logger是class的全名,后面的数字代表限制最长的字符，%msg：日志消息，%n换行符-->
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+
+    <!--开发环境:打印控制台-->
+    <springProfile name="dev">
+        <!--   输出level以上级别的日志      -->
+        <root level="debug">
+            <appender-ref ref="fileAppender" />
+        </root>
+    </springProfile>
+
+    <logger name="com.pxx.logdemo.controller.LogController" level="debug" additivity="false">
+        <appender-ref ref="consoleAppender" />
+    </logger>
+
+</configuration>
