@@ -7,7 +7,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import static com.example.bootrabbitdemo2.config.RabbitConfig.CONFIRM_EXCHANGE_NAME;
+import static org.pdaodao.config.RabbitConfig.CONFIRM_EXCHANGE_NAME;
+
 
 @RestController
 public class TestController {
