@@ -17,8 +17,9 @@
   <modules>
     <module>base</module>
     <module>spring</module>
-      <module>rabbitmaq</module>
-      <module>log4j</module>
+    <module>rabbitmaq</module>
+    <module>log4j</module>
+    <module>minio</module>
   </modules>
 
 </project>
