@@ -21,9 +21,9 @@ public class RabbitConfig {
 
     @Bean("normal")
     public DirectExchange normal() {
-        Map<String, Object> arguments = new HashMap<>();
-        arguments.put("alternate-exchange", EXCHANGE_BACKUP);
-        return new DirectExchange(EXCHANGE_NORMAL, true, false, arguments);
+        Map<String, Object> args = new HashMap<>();
+        args.put("alternate-exchange", EXCHANGE_BACKUP);
+        return new DirectExchange(EXCHANGE_NORMAL, true, false, args);
     }
 
     @Bean("backup")

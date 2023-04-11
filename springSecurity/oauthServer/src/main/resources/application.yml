@@ -1,0 +1,21 @@
+server:
+  port: 2779
+
+spring:
+  application:
+    name: oauth-server
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+      config:
+        file-extension: yaml #指定yaml格式的配置
+        server-addr: 127.0.0.1:8848
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/test?&useSSL=false
+
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml

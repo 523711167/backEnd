@@ -17,9 +17,11 @@
   <modules>
     <module>base</module>
     <module>spring</module>
-    <module>rabbitmaq</module>
+    <module>rabbit-mq</module>
     <module>log4j</module>
     <module>minio</module>
+    <module>springSecurity</module>
+    <module>mybaits-plus</module>
   </modules>
 
 </project>

@@ -6,7 +6,7 @@
         <artifactId>backEnd</artifactId>
         <version>1.0</version>
     </parent>
-    <artifactId>rabbitmaq</artifactId>
+    <artifactId>rabbit-mq</artifactId>
     <packaging>pom</packaging>
     <name>Archetype - rabbitmaq</name>
     <url>http://maven.apache.org</url>

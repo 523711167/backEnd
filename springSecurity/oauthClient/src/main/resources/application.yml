@@ -1,0 +1,21 @@
+server:
+  port: 2778
+
+spring:
+  application:
+    name: oauth-resource
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+      config:
+        file-extension: yaml #指定yaml格式的配置
+        server-addr: 127.0.0.1:8848
+
+
+#开始springsecurity调试模式
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
