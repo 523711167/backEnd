@@ -22,6 +22,8 @@
     <module>minio</module>
     <module>springSecurity</module>
     <module>mybaits-plus</module>
+    <module>swwager-demo</module>
+      <module>pindaodao</module>
   </modules>
 
 </project>
