@@ -9,13 +9,11 @@
         <version>1.0</version>
     </parent>
 
-    <artifactId>pindaodao</artifactId>
+    <artifactId>swagger</artifactId>
     <packaging>pom</packaging>
 
     <modules>
-        <module>pindaodao-spring-boot-starter</module>
-        <module>pindaodao-spring-boot-autoconfigure</module>
-        <module>pindaodaoDemo</module>
+        <module>swagger-standalone</module>
     </modules>
 
 </project>

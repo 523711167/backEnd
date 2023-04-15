@@ -5,35 +5,26 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.pdaodao</groupId>
-        <artifactId>pindaodao</artifactId>
+        <artifactId>swagger</artifactId>
         <version>1.0</version>
     </parent>
 
-    <artifactId>pindaodao-spring-boot-autoconfigure</artifactId>
-    <name>pindaodao-spring-boot-autoconfigure</name>
-
+    <artifactId>swagger-standalone</artifactId>
 
     <dependencies>
-        <!-- Compile dependencies -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-autoconfigure</artifactId>
-            <optional>true</optional>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
-
-        <!-- @ConfigurationProperties annotation processing (metadata for IDEs) -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-configuration-processor</artifactId>
-            <optional>true</optional>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-boot-starter</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <optional>true</optional>
         </dependency>
-
     </dependencies>
+
+
 </project>
