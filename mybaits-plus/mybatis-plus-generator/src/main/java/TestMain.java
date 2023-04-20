@@ -1,3 +1,4 @@
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.generator.FastAutoGenerator;
 import com.baomidou.mybatisplus.generator.config.OutputFile;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
@@ -7,22 +8,40 @@ import java.util.Collections;
 public class TestMain {
 
     public static void main(String[] args) {
-        FastAutoGenerator.create("jdbc:mysql://localhost:3306/test?&useSSL=false", "root", "123456")
+        FastAutoGenerator.create("jdbc:postgresql://192.168.0.20:54321/postgres?&useSSL=false", "postgres", "password")
                 .globalConfig(builder -> {
-                    builder.author("拼叨叨") // 设置作者
+                    builder.author("pdd") // 设置作者
                             .enableSwagger() // 开启 swagger 模式
                             .commentDate("yyyy-MM-dd")
                             .outputDir("/Users/pxx/temporary/"); // 指定输出目录
                 })
                 .packageConfig(builder -> {
-                    builder.parent("org.pindaodao") // 设置父包名
-                            .moduleName("admin") // 设置父包模块名
+                    builder.parent("com.hngd") // 设置父包名
+                            .moduleName("user") // 设置父包模块名
                             .pathInfo(Collections.singletonMap(OutputFile.xml, "/Users/pxx/temporary/xml/")); // 设置mapperXml生成路径
                 })
                 .strategyConfig(builder -> {
                     builder
-                            .addInclude("user", "role", "userrole") // 设置需要生成的表名
-                    .entityBuilder()
+                            .addInclude(
+                                    "tb_enterpise",
+                                    "tb_user",
+                                    "tb_device_group",
+                                    "tb_role",
+                                    "tb_user_role_rela",
+                                    "tb_user_expand",
+                                    "tb_organization",
+                                    "tb_device",
+                                    "tb_button",
+                                    "tb_menu",
+                                    "tb_device_group",
+                                    "tb_interface",
+                                    "tb_role_menu_rela",
+                                    "tb_role_device_rela",
+                                    "tb_role_interface_rela",
+                                    "tb_role_button_rela") // 设置需要生成的表名
+                            .addTablePrefix("tb_")
+                            .entityBuilder()
+                            .idType(IdType.ASSIGN_UUID)
                             .enableFileOverride()
                             .enableLombok();
                 })
