@@ -1,0 +1,16 @@
+server:
+  port: 3000
+
+spring:
+  application:
+    name: client
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+      config:
+        #指定yaml格式的配置
+        file-extension: yaml
+        serverAddr: 127.0.0.1:8848
+
+

@@ -18,6 +18,7 @@
     <module>mybaits-plus</module>
     <module>pindaodao</module>
     <module>swagger</module>
+    <module>springsecurity5</module>
   </modules>
 
   <properties>

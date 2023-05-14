@@ -1,0 +1,31 @@
+server:
+  port: 2888
+
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+      config:
+        #指定yaml格式的配置
+        file-extension: yaml
+        serverAddr: 127.0.0.1:8848
+
+knife4j:
+  gateway:
+    # 是否开启
+    enabled: true
+    # 指定服务发现的模式聚合微服务文档，并且是默认`default`分组
+    strategy: discover
+  # 服务发现模式的配置
+  discover:
+    # 开启
+    enabled: true
+

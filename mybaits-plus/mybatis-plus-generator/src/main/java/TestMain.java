@@ -23,22 +23,24 @@ public class TestMain {
                 .strategyConfig(builder -> {
                     builder
                             .addInclude(
-                                    "tb_enterpise",
-                                    "tb_user",
-                                    "tb_device_group",
-                                    "tb_role",
-                                    "tb_user_role_rela",
-                                    "tb_user_expand",
-                                    "tb_organization",
-                                    "tb_device",
-                                    "tb_button",
-                                    "tb_menu",
-                                    "tb_device_group",
-                                    "tb_interface",
-                                    "tb_role_menu_rela",
-                                    "tb_role_device_rela",
-                                    "tb_role_interface_rela",
-                                    "tb_role_button_rela") // 设置需要生成的表名
+                                    "tb_role_device_group_rela"
+                                    //"tb_enterpise",
+                                    //"tb_user",
+                                    //"tb_device_group",
+                                    //"tb_role",
+                                    //"tb_user_role_rela",
+                                    //"tb_user_expand",
+                                    //"tb_organization",
+                                    //"tb_device",
+                                    //"tb_button",
+                                    //"tb_menu",
+                                    //"tb_device_group",
+                                    //"tb_interface",
+                                    //"tb_role_menu_rela",
+                                    //"tb_role_device_rela",
+                                    //"tb_role_interface_rela",
+                                    //"tb_role_button_rela"
+                            ) // 设置需要生成的表名
                             .addTablePrefix("tb_")
                             .entityBuilder()
                             .idType(IdType.ASSIGN_UUID)

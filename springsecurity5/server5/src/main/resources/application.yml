@@ -1,0 +1,6 @@
+#开始springsecurity调试模式
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
