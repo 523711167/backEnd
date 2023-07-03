@@ -59,7 +59,10 @@
         </root>
     </springProfile>
 
-    <logger name="com.pxx.logdemo.controller.LogController" level="debug" additivity="false">
+    <!--   additivity属性是可选的，默认为true。
+    当设置为false时，表示日志消息不会向更高级别的父级包传递。
+    在这个配置中，日志消息将只被发送到com.pxx.logdemo.controller.LogController的logger。-->
+    <logger name="org.pxx.logdemo.controller.LogController" level="debug" additivity="false">
         <appender-ref ref="consoleAppender" />
     </logger>
 
