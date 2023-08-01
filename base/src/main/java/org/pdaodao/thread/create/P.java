@@ -8,9 +8,11 @@ import java.util.concurrent.FutureTask;
 public class P {
     public static void main(String[] args) throws Exception {
 
+        //继承Thread类
         //Thread a = new A();
         //a.start();
-        //
+
+        //实现Runnable
         //Thread b = new Thread(new B());
         //b.start();
 

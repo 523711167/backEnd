@@ -41,6 +41,34 @@ public class P {
     }
 
     /**
+     * 测试synchronized执行完毕是否会调用notifyAll
+     * 不会
+     */
+    @Test
+    public void test23() throws InterruptedException {
+        CC cc = new CC("测试");
+        new Thread(() -> {
+            try {
+                cc.ceWork();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }).start();
+
+        Thread t = new Thread(() -> {
+            try {
+                cc.ceWorkWork();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        });
+        t.start();
+        TimeUnit.SECONDS.sleep(5);
+        System.out.println("t.isAlive() = " + t.isAlive());
+        TimeUnit.SECONDS.sleep(50);
+    }
+
+    /**
      *  thread.interrupt(); 设置线程打断标志，但不会修改线程的运行状态.
      */
     @Test
@@ -55,6 +83,7 @@ public class P {
         thread.start();
         TimeUnit.SECONDS.sleep(2);
         thread.interrupt();
+        System.out.println("thread.isInterrupted() = " + thread.isInterrupted());
         TimeUnit.SECONDS.sleep(50);
     }
 
@@ -163,7 +192,7 @@ public class P {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            for (int i = 0; i < 100; i++) {
+            for (int i = 0; i < 10; i++) {
                 System.out.println("C");
             }
         });
@@ -183,7 +212,7 @@ public class P {
     public void test5() throws InterruptedException {
 
         CC yt1 = new CC("张三");
-        CC yt2 = new CC("李四");
+        DD yt2 = new DD("李四");
 
         Thread thread = new Thread(yt1);
         Thread thread1 = new Thread(yt2);

@@ -15,12 +15,12 @@ public class CyclicBarrierDome {
         @Override
         public void run() {
             try {
-                Thread.sleep(10);
+                Thread.sleep(2);
                 System.out.println(getName() + " 到达栅栏 A");
                 barrier.await();
                 System.out.println(getName() + " 冲破栅栏 A");
 
-                Thread.sleep(20);
+                Thread.sleep(3);
                 System.out.println(getName() + " 到达栅栏 B");
                 barrier.await();
                 System.out.println(getName() + " 冲破栅栏 B");
@@ -40,7 +40,7 @@ public class CyclicBarrierDome {
             }
         });
 
-        for(int i = 0; i < 2; i++) {
+        for(int i = 0; i < 5; i++) {
             new TaskThread(barrier).start();
         }
 

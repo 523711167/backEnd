@@ -1,5 +1,6 @@
 package org.pdaodao.thread.unsafe;
 
+import org.junit.Test;
 import sun.misc.Unsafe;
 
 import java.lang.reflect.Field;
@@ -24,10 +25,29 @@ public class P {
         long offsetPassword = unsafe.staticFieldOffset(A.class.getDeclaredField("password"));
         A a = new A();
         unsafe.putObjectVolatile(a, offsetName, "123");
-        //todo 这个地方静态变量赋值无效
-        unsafe.putObjectVolatile(a, offsetPassword, "321");
+        //这个地方静态变量赋值无效 不能通过对象，需要通过class类
+        unsafe.putObject(A.class, offsetPassword, "321");
         System.out.println(a.getName());
         System.out.println(a.getPassword());
+    }
+
+    @Test
+    public void test23() throws NoSuchFieldException, IllegalAccessException {
+        // 获取Unsafe实例
+        Field unsafeField = Unsafe.class.getDeclaredField("theUnsafe");
+        unsafeField.setAccessible(true);
+        Unsafe unsafe = (Unsafe) unsafeField.get(null);
+
+        // 获取类A的str字段的偏移量
+        Field field = A.class.getDeclaredField("password");
+        long offset = unsafe.staticFieldOffset(field);
+
+        // 修改类A的str字段的值
+        A obj = new A();
+        unsafe.putObject(A.class, offset, "New Value");
+
+        // 测试输出修改后的值
+        System.out.println(A.getPassword());
     }
 
     /**
@@ -57,6 +77,7 @@ public class P {
         });
 
         t3.start();
+        //当前线程等待T3执行完毕
         t3.join();
         t1.start();
         t2.start();

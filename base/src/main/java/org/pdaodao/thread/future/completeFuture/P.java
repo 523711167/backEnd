@@ -169,7 +169,7 @@ public class P {
         CompletableFuture<String> completableFuture3 = CompletableFuture.supplyAsync(() -> {
             try {
                 TimeUnit.SECONDS.sleep(10);
-                System.out.println("i am sleep 3");
+                System.out.println("i am sleep 10");
             } catch (Exception e) {
                 e.printStackTrace();
             }

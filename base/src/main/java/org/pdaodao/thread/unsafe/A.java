@@ -10,7 +10,7 @@ class A {
         return name;
     }
 
-    public String getPassword() {
+    public static String getPassword() {
         return password;
     }
 }
