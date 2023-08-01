@@ -29,6 +29,17 @@
       <artifactId>jol-core</artifactId>
       <version>0.16</version>
     </dependency>
+    <dependency>
+      <groupId>io.projectreactor</groupId>
+      <artifactId>reactor-core</artifactId>
+      <version>3.4.7</version>
+    </dependency>
+    <dependency>
+      <groupId>io.projectreactor</groupId>
+      <artifactId>reactor-test</artifactId>
+      <version>3.4.7</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 
 </project>

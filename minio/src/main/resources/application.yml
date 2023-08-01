@@ -1,5 +1,0 @@
-minio:
-  endpoint: http://localhost:9000
-  accessKey: pddadmin
-  secretKey: pddadmin
-  bucketName: woshinidie

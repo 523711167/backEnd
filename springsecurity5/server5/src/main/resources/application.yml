@@ -1,6 +1,6 @@
-#开始springsecurity调试模式
+server:
+  port: 8080
+
 logging:
   level:
-    org:
-      springframework:
-        security: DEBUG
+    org.springframework.security: trace

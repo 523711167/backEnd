@@ -13,12 +13,12 @@
     <module>spring</module>
     <module>rabbit-mq</module>
     <module>log4j</module>
-    <module>minio</module>
     <module>springSecurity</module>
     <module>mybaits-plus</module>
     <module>pindaodao</module>
     <module>swagger</module>
     <module>springsecurity5</module>
+    <module>jwt</module>
   </modules>
 
   <properties>
