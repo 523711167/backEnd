@@ -18,7 +18,7 @@ public class RabbitConsumer {
     public static void main(String[] args) throws IOException, TimeoutException {
         Channel channel = U.createCon().createChannel();
 
-        channel.exchangeDeclare(EXCHANGE_DEAD, BuiltinExchangeType.DIRECT);
+//        channel.exchangeDeclare(EXCHANGE_DEAD, BuiltinExchangeType.DIRECT);
 
         //正常队列绑定死信队列信息
         Map<String, Object> params = new HashMap<>();

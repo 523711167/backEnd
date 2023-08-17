@@ -22,7 +22,6 @@ public class RabbitComsumer2 {
 
         String queue = channel.queueDeclare().getQueue();
         channel.queueBind(queue, EXCHANGE_NAME, "");
-
         channel.basicConsume(queue, true, (s, delivery) -> {
             String res = new String(delivery.getBody());
             System.out.println(res);
