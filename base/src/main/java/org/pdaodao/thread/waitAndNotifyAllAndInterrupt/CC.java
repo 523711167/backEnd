@@ -63,9 +63,8 @@ class CC implements Runnable {
 
     synchronized void ceWorkWork() throws InterruptedException {
         System.out.println("测试开始");
-        TimeUnit.SECONDS.sleep(1);
-        this.notify();
-        TimeUnit.SECONDS.sleep(5);
-        System.out.println("如果this.notify注释了，那么务必把我也注释了，我使用来测试notify后的代码还会执行吗");
+//        this.notify();
+        TimeUnit.SECONDS.sleep(2);
+//        System.out.println("如果this.notify注释了，那么务必把我也注释了，我使用来测试notify后的代码还会执行吗");
     }
 }
